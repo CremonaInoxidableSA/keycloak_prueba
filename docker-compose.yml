@@ -17,7 +17,7 @@ services:
   certbot:
     image: certbot/dns-cloudflare:latest
     container_name: certbot
-    restart: no
+    restart: on-failure
     volumes:
       - ./certs/conf:/etc/letsencrypt
       - ./certs/secrets/cloudflare.ini:/etc/letsencrypt/secrets/cloudflare.ini:ro
