@@ -1,2 +1,5 @@
 .env
 cloudflare.ini
+certs/secrets/
+certs/conf/secrets/
+logs.txt
