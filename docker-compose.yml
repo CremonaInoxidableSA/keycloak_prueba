@@ -50,7 +50,7 @@ services:
       KC_HOSTNAME_PORT: 443
       KC_HTTP_ENABLED: "true"
       KC_PROXY: reencrypt
-      KC_PROXY_HEADERS: forwarded,xforwarded
+      KC_PROXY_HEADERS: xforwarded
       KC_METRICS_ENABLED: "true"
     command: start
     ports:
