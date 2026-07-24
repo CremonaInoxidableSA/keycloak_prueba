@@ -67,17 +67,6 @@
         </#if>
     </div>
 </@layout.registrationLayout>
-                    </div>
-                </form>
-            </#if>
-        </div>
-        <#if realm.password && social.providers??>
-            <div id="kc-social-providers" class="login-pf-signup">
-                <span>${msg("identity-provider-login-label")}</span>
-                <div class="${properties.kcSocialProvidersClass!}">
-                    <#list social.providers as p>
-                        <a id="social-${p.alias}" class="${properties.kcSocialProviderButtonClass!} ${properties.kcButtonClass!} ${properties.kcButtonSecondaryClass!}" type="button" href="${p.loginUrl}">
-                            <span class="${properties.kcIconClass!} ${properties.kcIconSocialProviderClass!} ${p.providerId}"></span>
                             <span class="pf-v5-c-button__text">${p.displayName}</span>
                         </a>
                     </#list>
