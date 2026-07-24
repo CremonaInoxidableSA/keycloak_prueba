@@ -67,11 +67,3 @@
         </#if>
     </div>
 </@layout.registrationLayout>
-                            <span class="pf-v5-c-button__text">${p.displayName}</span>
-                        </a>
-                    </#list>
-                </div>
-            </div>
-        </#if>
-    </div>
-</@layout.registrationLayout>
