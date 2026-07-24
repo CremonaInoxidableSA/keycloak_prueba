@@ -1,0 +1,118 @@
+/* Fondo */
+.login-pf {
+    background:
+        linear-gradient(
+            rgba(10,25,40,.70),
+            rgba(10,25,40,.70)
+        ),
+        url("../img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Caja principal */
+
+.card-pf {
+
+    border-radius:16px;
+
+    border:none;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.30);
+
+    background:#ffffff;
+
+    max-width:430px;
+
+}
+
+/* Logo */
+
+#kc-header-wrapper{
+
+    background-image:url("../img/logo.png");
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:220px;
+
+    height:80px;
+
+    text-indent:-9999px;
+
+}
+
+/* Título */
+
+#kc-page-title{
+
+    color:#1d3557;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+/* Inputs */
+
+.pf-v5-c-form-control{
+
+    border-radius:10px;
+
+    border:1px solid #d0d7de;
+
+    padding:12px;
+
+}
+
+.pf-v5-c-form-control:focus{
+
+    border-color:#0066cc;
+
+    box-shadow:0 0 0 3px rgba(0,102,204,.20);
+
+}
+
+/* Botón */
+
+.pf-v5-c-button.pf-m-primary{
+
+    background:#0066cc;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.pf-v5-c-button.pf-m-primary:hover{
+
+    background:#0053a6;
+
+}
+
+/* Links */
+
+a{
+
+    color:#0066cc;
+
+}
+
+a:hover{
+
+    color:#004080;
+
+}
