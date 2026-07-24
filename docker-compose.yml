@@ -38,7 +38,7 @@ services:
     container_name: keycloak
     restart: always
     volumes:
-    - ./themes:/opt/keycloak/themes
+    - ./themes/creminox:/opt/keycloak/themes/creminox
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: Ki?6#p&2e#NL+%Y8
