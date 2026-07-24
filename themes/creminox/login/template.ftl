@@ -26,13 +26,11 @@
 <body class="login-pf-body">
     <div class="login-pf-page">
         <div id="kc-container" class="login-pf-container">
-            <div class="login-pf-header">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"></div>
-            </div>
             <div class="card-pf login-pf">
-                <header class="login-pf-header">
-                    <h1 id="kc-page-title"><#nested "header"></h1>
-                </header>
+                <div class="login-pf-header">
+                    <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"></div>
+                </div>
+                
                 <div class="login-pf-body">
                     <#if displayMessage && message?has_content>
                         <div class="kc-feedback">
@@ -41,13 +39,16 @@
                             </div>
                         </div>
                     </#if>
+                    
                     <#nested "form">
                 </div>
+                
                 <#if displayInfo>
-                    <div class="login-pf-info">
+                    <div id="kc-info">
                         <#nested "info">
                     </div>
                 </#if>
+                
                 <#nested "socialProviders">
             </div>
         </div>
