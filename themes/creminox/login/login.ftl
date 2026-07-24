@@ -42,25 +42,28 @@
                                     <div class="checkbox">
                                         <label>
                                             <#if login.rememberMe??>
-                                                <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox" checked> ${msg("rememberMe")}
+                                                <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox" checked> 
+                                                <span>${msg("rememberMe")}</span>
                                             <#else>
-                                                <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox"> ${msg("rememberMe")}
+                                                <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox"> 
+                                                <span>${msg("rememberMe")}</span>
                                             </#if>
                                         </label>
                                     </div>
-                                </#if>
-                            </div>
-                            <div class="${properties.kcFormOptionsWrapperClass!}">
-                                <#if realm.resetPasswordAllowed>
-                                    <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
                                 </#if>
                             </div>
                         </div>
 
                         <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
                             <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
-                            <input tabindex="6" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                            <input tabindex="5" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                         </div>
+
+                        <#if realm.resetPasswordAllowed>
+                            <div id="kc-forgot-password" class="${properties.kcFormGroupClass!}">
+                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
+                            </div>
+                        </#if>
                     </form>
                 </#if>
             </div>

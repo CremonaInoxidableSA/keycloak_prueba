@@ -12,7 +12,7 @@
    ===================================================== */
 
 :root {
-    --creminox-bg: #0F1523;
+    --creminox-bg: #131313;
     --creminox-card: #1a1a1f;
     --creminox-input: #131313;
     --creminox-border: #404049;
@@ -56,7 +56,10 @@ body {
 }
 
 #kc-header {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 /* =====================================================
@@ -81,11 +84,14 @@ body {
 .kc-logo-creminox {
     width: 100%;
     height: 90px;
-    background: url("../img/logo.png") center / contain no-repeat !important;
+    background: url("../img/logo.png") center no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 #kc-page-title {
@@ -172,8 +178,58 @@ input[type="password"]:focus,
     font-weight: 500 !important;
 }
 
-input[type="checkbox"] {
+.checkbox {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.checkbox label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
     cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+input[type="checkbox"],
+.checkbox input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    border: 2px solid var(--creminox-border) !important;
+    border-radius: 4px !important;
+    background: var(--creminox-input) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+input[type="checkbox"]:hover,
+.checkbox input[type="checkbox"]:hover {
+    border-color: var(--creminox-primary) !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+}
+
+input[type="checkbox"]:checked,
+.checkbox input[type="checkbox"]:checked {
+    background: var(--creminox-primary) !important;
+    border-color: var(--creminox-primary) !important;
+}
+
+input[type="checkbox"]:checked::after,
+.checkbox input[type="checkbox"]:checked::after {
+    content: '✓' !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    position: absolute !important;
 }
 
 /* =====================================================
@@ -225,6 +281,27 @@ a {
 
 a:hover {
     color: #93C5FD !important;
+    text-decoration: underline !important;
+}
+
+/* =====================================================
+   FORGOT PASSWORD
+   ===================================================== */
+
+#kc-forgot-password {
+    text-align: center !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+}
+
+#kc-forgot-password a {
+    color: var(--creminox-accent) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+}
+
+#kc-forgot-password a:hover {
     text-decoration: underline !important;
 }
 
@@ -286,11 +363,18 @@ a:hover {
     margin-bottom: 16px !important;
 }
 
-.social-providers-wrapper,
-.pf-v5-c-form__group-control {
+.social-providers-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
+}
+
+.social-providers-wrapper > a:nth-child(n+2):nth-last-child(n+2) {
+    grid-column: span 1;
+}
+
+.social-providers-wrapper:has(> a:nth-child(n+2)) {
+    grid-template-columns: 1fr 1fr;
 }
 
 .social-provider-btn,
