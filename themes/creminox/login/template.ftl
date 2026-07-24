@@ -1,11 +1,11 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayWatermark=true>
+<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false>
 <!DOCTYPE html>
-<html class="login-pf">
+<html class="login-pf" lang="${lang!}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keycloak</title>
+    <title>${title!}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
@@ -30,7 +30,25 @@
                 <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"></div>
             </div>
             <div class="card-pf login-pf">
-                <#nested>
+                <header class="login-pf-header">
+                    <h1 id="kc-page-title"><#nested "header"></h1>
+                </header>
+                <div class="login-pf-body">
+                    <#if displayMessage && message?has_content>
+                        <div class="kc-feedback">
+                            <div class="alert ${message.type}">
+                                <span>${kcSanitize(message.summary)?no_esc}</span>
+                            </div>
+                        </div>
+                    </#if>
+                    <#nested "form">
+                </div>
+                <#if displayInfo>
+                    <div class="login-pf-info">
+                        <#nested "info">
+                    </div>
+                </#if>
+                <#nested "socialProviders">
             </div>
         </div>
     </div>

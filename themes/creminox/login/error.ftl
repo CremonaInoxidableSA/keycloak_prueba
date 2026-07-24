@@ -1,12 +1,16 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=social.displaySocialProviders?? displayWatermark=false>
-    <div id="kc-error-message">
-        <p class="instruction">${message.summary}</p>
-        <#if message.detail??>
-            <p class="error-details">${message.detail}</p>
-        </#if>
-    </div>
-    <div class="form-group">
-        <a href="${url.loginUrl}" class="btn btn-primary">${msg("backToLogin")}</a>
-    </div>
+<@layout.registrationLayout displayMessage=false; section>
+    <#if section = "header">
+        ${kcSanitize(msg("errorTitle"))?no_esc}
+    <#elseif section = "form">
+        <div id="kc-error-message">
+            <p class="instruction">${kcSanitize(message.summary)?no_esc}</p>
+            <#if traceId??>
+                <p class="instruction" id="traceId">${msg("traceIdSupportMessage", traceId)}</p>
+            </#if>
+            <#if client?? && client.baseUrl?has_content>
+                <p><a id="backToApplication" href="${client.baseUrl}">${msg("backToApplication")}</a></p>
+            </#if>
+        </div>
+    </#if>
 </@layout.registrationLayout>
