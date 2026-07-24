@@ -2,6 +2,10 @@
    CREMINOX LOGIN THEME
    =========================================================== */
 
+* {
+    box-sizing: border-box;
+}
+
 /* --------------------------
    Fondo
 ---------------------------*/
@@ -10,192 +14,334 @@ html,
 body,
 .login-pf,
 .login-pf body,
-.login-pf-page{
-
-    width:100%;
-    height:100%;
-    margin:0;
+.login-pf-page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-
+body {
     background:
-        linear-gradient(rgba(15,23,42,.70),rgba(15,23,42,.70)),
+        linear-gradient(rgba(15, 23, 42, .75), rgba(15, 23, 42, .75)),
         url("../img/background.jpg") center center / cover no-repeat fixed;
-
+    
     font-family:
-        Inter,
-        Segoe UI,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         Roboto,
+        "Helvetica Neue",
         Arial,
         sans-serif;
-
+    
+    color: #F3F4F6;
 }
 
 /* --------------------------
    Contenedor principal
 ---------------------------*/
 
-.login-pf-page{
+.login-pf-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    min-height:100vh;
-
-    padding:40px;
-
+#kc-container {
+    width: 100%;
+    max-width: 520px;
 }
 
 /* --------------------------
    Tarjeta
 ---------------------------*/
 
-.card-pf{
+.login-pf {
+    width: 100%;
+}
 
-    width:100%;
-
-    max-width:500px;
-
-    background:rgba(17,24,39,.93);
-
-    border:none;
-
-    border-radius:22px;
-
-    padding:42px;
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.55);
-
-    backdrop-filter:blur(8px);
-
+.card-pf {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(30, 30, 36, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
 
 /* --------------------------
-   Header
+   Header/Logo
 ---------------------------*/
 
-#kc-header{
-
-    display:none;
-
+#kc-header {
+    display: none;
 }
 
-#kc-header-wrapper{
-
-    text-indent:-99999px;
-
-    background:url("../img/logo.png") center no-repeat;
-
-    background-size:320px;
-
-    height:110px;
-
-    margin-bottom:25px;
-
+#kc-header-wrapper {
+    text-indent: -99999px;
+    background: url("../img/logo.png") center no-repeat;
+    background-size: contain;
+    height: 80px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --------------------------
    Ocultar título
 ---------------------------*/
 
-#kc-page-title{
+#kc-page-title {
+    display: none;
+}
 
-    display:none;
+/* --------------------------
+   Contenedor de formulario
+---------------------------*/
 
+.pf-v5-c-form {
+    width: 100%;
+}
+
+.pf-v5-c-form__group {
+    margin-bottom: 24px;
+}
+
+.pf-v5-c-form__group-label {
+    margin-bottom: 10px;
 }
 
 /* --------------------------
    Labels
 ---------------------------*/
 
-label{
-
-    color:#F3F4F6 !important;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    margin-bottom:8px;
-
+label {
+    color: #E5E7EB !important;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
 }
 
 /* --------------------------
    Inputs
 ---------------------------*/
 
-input{
-
-    height:54px !important;
-
-    border-radius:12px !important;
-
-    border:1px solid #374151 !important;
-
-    background:#1F2937 !important;
-
-    color:white !important;
-
-    padding:0 16px !important;
-
-    transition:.25s;
-
+input,
+textarea,
+select {
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    border: 1px solid #404049 !important;
+    background: rgba(45, 45, 50, 0.8) !important;
+    color: #F3F4F6 !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    transition: all 0.25s ease !important;
 }
 
-input::placeholder{
-
-    color:#9CA3AF;
-
+input::placeholder {
+    color: #9CA3AF !important;
 }
 
-input:focus{
+input:hover {
+    border-color: #505059 !important;
+    background: rgba(50, 50, 56, 0.9) !important;
+}
 
-    border-color:#3B82F6 !important;
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    border-color: #EF4444 !important;
+    box-shadow: 
+        0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+    background: rgba(50, 50, 56, 0.95) !important;
+}
 
-    box-shadow:
-        0 0 0 3px rgba(59,130,246,.20) !important;
-
+input[type="checkbox"] {
+    width: auto !important;
+    height: auto !important;
+    margin-right: 8px;
 }
 
 /* --------------------------
-   Botón Login
+   Botón Primary (Login)
 ---------------------------*/
 
 .pf-v5-c-button.pf-m-primary,
-input[type=submit]{
-
-    width:100%;
-
-    height:54px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#EF4444 !important;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.25s;
-
+input[type="submit"],
+button[type="submit"] {
+    width: 100% !important;
+    height: 50px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .pf-v5-c-button.pf-m-primary:hover,
-input[type=submit]:hover{
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%) !important;
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
+    transform: translateY(-2px);
+}
 
-    background:#DC2626 !important;
+.pf-v5-c-button.pf-m-primary:active,
+input[type="submit"]:active,
+button[type="submit"]:active {
+    transform: translateY(0);
+}
 
+/* --------------------------
+   Botones secundarios
+---------------------------*/
+
+.pf-v5-c-button.pf-m-secondary,
+a.pf-v5-c-button {
+    color: #60A5FA !important;
+    background: transparent !important;
+    border: 1px solid rgba(96, 165, 250, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+    transition: all 0.25s ease !important;
+}
+
+.pf-v5-c-button.pf-m-secondary:hover,
+a.pf-v5-c-button:hover {
+    background: rgba(96, 165, 250, 0.1) !important;
+    border-color: #60A5FA !important;
+    color: #93C5FD !important;
+}
+
+/* --------------------------
+   Links
+---------------------------*/
+
+a {
+    color: #60A5FA;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #93C5FD;
+    text-decoration: underline;
+}
+
+/* --------------------------
+   Opciones (Remember me)
+---------------------------*/
+
+.pf-v5-c-check {
+    margin-bottom: 20px;
+}
+
+.pf-v5-c-check__label {
+    color: #D1D5DB !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pf-v5-c-check__input {
+    cursor: pointer;
+}
+
+/* --------------------------
+   Separadores
+---------------------------*/
+
+.pf-v5-c-divider {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    margin: 24px 0 !important;
+}
+
+/* --------------------------
+   Textos secundarios
+---------------------------*/
+
+.pf-v5-c-form__helper-text {
+    color: #9CA3AF;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* --------------------------
+   Mensajes de error
+---------------------------*/
+
+.pf-v5-c-alert.pf-m-danger {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    border-radius: 10px !important;
+    color: #FECACA !important;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+}
+
+/* --------------------------
+   Opciones sociales / Alternativas
+---------------------------*/
+
+.pf-v5-c-login__main-footer-band-item {
+    margin-bottom: 20px;
+}
+
+.pf-v5-c-login__main-footer-band-item-title {
+    color: #D1D5DB;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* --------------------------
+   Responsive
+---------------------------*/
+
+@media (max-width: 768px) {
+    .card-pf {
+        padding: 35px 25px;
+    }
+    
+    #kc-header-wrapper {
+        height: 60px;
+        margin-bottom: 25px;
+    }
+    
+    label {
+        font-size: 13px;
+    }
+    
+    input {
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+    
+    .pf-v5-c-button.pf-m-primary,
+    input[type="submit"],
+    button[type="submit"] {
+        height: 45px !important;
+        font-size: 15px !important;
+    }
 }
 
 /* --------------------------
