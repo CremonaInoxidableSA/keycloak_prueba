@@ -1,160 +1,135 @@
 /* ===========================================================
-   CREMINOX LOGIN THEME
+   CREMINOX LOGIN THEME - PROFESSIONAL CUSTOMIZATION
    =========================================================== */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* --------------------------
-   Fondo
----------------------------*/
+/* =====================================================
+   COLOR PALETTE
+   ===================================================== */
+
+:root {
+    --creminox-bg: #0F1523;
+    --creminox-card: #1a1a1f;
+    --creminox-input: #131313;
+    --creminox-border: #404049;
+    --creminox-text: #F3F4F6;
+    --creminox-text-secondary: #D1D5DB;
+    --creminox-primary: #EF4444;
+    --creminox-primary-dark: #DC2626;
+    --creminox-accent: #60A5FA;
+}
+
+/* =====================================================
+   BODY & LAYOUT
+   ===================================================== */
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    background: var(--creminox-bg) !important;
+    color: var(--creminox-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
 body {
-    background: #0F1523 !important;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        sans-serif !important;
-    
-    color: #F3F4F6 !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* --------------------------
-   Contenedor principal
----------------------------*/
+/* =====================================================
+   MAIN LOGIN CONTAINER
+   ===================================================== */
 
-.login-pf-page {
+.pf-v5-c-login-creminox {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     padding: 20px;
     width: 100%;
-}
-
-#kc-container {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
-}
-
-/* --------------------------
-   Tarjeta
----------------------------*/
-
-.login-pf {
-    width: 100%;
-}
-
-.card-pf {
-    width: 100% !important;
-    background: rgba(30, 30, 36, 0.95) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 20px !important;
-    padding: 50px 40px !important;
-    box-shadow: 
-        0 25px 70px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(10px) !important;
-}
-
-/* --------------------------
-   Header/Logo
----------------------------*/
-
-.login-pf-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
 }
 
 #kc-header {
     display: none;
 }
 
-.header-wrapper,
-#kc-header-wrapper {
-    width: 100% !important;
-    height: 90px !important;
+/* =====================================================
+   FORM CARD
+   ===================================================== */
+
+.pf-v5-c-card-creminox {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(30, 30, 36, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    padding: 50px 40px !important;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* =====================================================
+   LOGO / HEADER
+   ===================================================== */
+
+.kc-logo-creminox {
+    width: 100%;
+    height: 90px;
     background: url("../img/logo.png") center / contain no-repeat !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-indent: -99999px !important;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* --------------------------
-   Page Title
----------------------------*/
-
-#kc-page-title,
-.login-pf-header h1 {
-    display: none !important;
+#kc-page-title {
+    display: none;
 }
 
-/* --------------------------
-   Form Groups
----------------------------*/
+header.pf-v5-c-form__header {
+    display: none;
+}
 
-.form-group,
+/* =====================================================
+   FORM GROUPS
+   ===================================================== */
+
 .pf-v5-c-form__group {
-    width: 100% !important;
     margin-bottom: 14px !important;
 }
 
-#kc-form {
-    width: 100%;
+.pf-v5-c-form__group-label {
+    margin-bottom: 8px !important;
 }
 
-#kc-form-wrapper {
-    width: 100%;
-}
-
-/* --------------------------
-   Labels
----------------------------*/
-
-.form-label,
 label {
-    color: #E5E7EB !important;
+    color: var(--creminox-text) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     margin-bottom: 8px !important;
     display: block !important;
 }
 
-/* --------------------------
-   Inputs
----------------------------*/
+/* =====================================================
+   INPUT FIELDS
+   ===================================================== */
 
-.form-control,
 input[type="text"],
 input[type="email"],
 input[type="password"],
-textarea,
-select {
+.pf-v5-c-form-control {
     width: 100% !important;
     height: 50px !important;
     border-radius: 10px !important;
-    border: 1px solid #404049 !important;
-    background: #131313 !important;
-    color: #F3F4F6 !important;
+    border: 1px solid var(--creminox-border) !important;
+    background: var(--creminox-input) !important;
+    color: var(--creminox-text) !important;
     padding: 12px 16px !important;
     font-size: 15px !important;
     transition: all 0.25s ease !important;
@@ -165,103 +140,54 @@ input::placeholder {
     color: #9CA3AF !important;
 }
 
-input:hover {
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+.pf-v5-c-form-control:hover {
     border-color: #505059 !important;
     background: #1a1a1f !important;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+.pf-v5-c-form-control:focus {
     outline: none !important;
-    border-color: #EF4444 !important;
-    box-shadow: 
-        0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+    border-color: var(--creminox-primary) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
     background: #1a1a1f !important;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-    width: auto !important;
-    height: auto !important;
-    margin-right: 8px !important;
+/* =====================================================
+   CHECKBOXES
+   ===================================================== */
+
+.pf-v5-c-check {
+    margin-bottom: 12px !important;
 }
 
-/* --------------------------
-   Error Messages
----------------------------*/
-
-.form-error-message,
-.pf-v5-c-form__helper-text.pf-m-error {
-    color: #FECACA !important;
-    font-size: 12px !important;
-    margin-top: 6px !important;
+.pf-v5-c-check__label {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
 }
 
-/* --------------------------
-   Form Setting
----------------------------*/
-
-.form-setting {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 14px;
-}
-
-#kc-form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    font-size: 13px;
-}
-
-.form-options-wrapper {
-    text-align: right;
-}
-
-/* --------------------------
-   Checkboxes
----------------------------*/
-
-.checkbox {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.checkbox label {
-    color: #E5E7EB !important;
-    margin: 0 !important;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-}
-
-.checkbox input[type="checkbox"] {
-    margin-right: 8px !important;
+input[type="checkbox"] {
     cursor: pointer !important;
 }
 
-/* --------------------------
-   Botones
----------------------------*/
+/* =====================================================
+   BUTTONS
+   ===================================================== */
 
-#kc-form-buttons {
-    margin-top: 8px;
-    margin-bottom: 0;
-}
-
-.btn,
-.btn-primary,
 input[type="submit"],
 button[type="submit"],
-#kc-login {
+.pf-v5-c-button.pf-m-primary {
     width: 100% !important;
     height: 50px !important;
     border: none !important;
     border-radius: 10px !important;
-    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+    background: linear-gradient(135deg, var(--creminox-primary) 0%, var(--creminox-primary-dark) 100%) !important;
     color: white !important;
     font-size: 16px !important;
     font-weight: 700 !important;
@@ -273,52 +199,27 @@ button[type="submit"],
     font-family: inherit !important;
 }
 
-.btn-primary:hover,
-.btn:hover,
 input[type="submit"]:hover,
 button[type="submit"]:hover,
-#kc-login:hover {
-    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%) !important;
+.pf-v5-c-button.pf-m-primary:hover {
+    background: linear-gradient(135deg, var(--creminox-primary-dark) 0%, #B91C1C 100%) !important;
     box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
     transform: translateY(-2px);
 }
 
-.btn-primary:active,
-.btn:active,
 input[type="submit"]:active,
 button[type="submit"]:active,
-#kc-login:active {
+.pf-v5-c-button.pf-m-primary:active {
     transform: translateY(0);
 }
 
-/* --------------------------
-   Botones secundarios
----------------------------*/
-
-.btn-secondary {
-    background: rgba(96, 165, 250, 0.1) !important;
-    border: 1px solid rgba(96, 165, 250, 0.3) !important;
-    color: #60A5FA !important;
-    border-radius: 8px !important;
-    padding: 10px 16px !important;
-    font-size: 14px !important;
-    transition: all 0.25s ease !important;
-}
-
-.btn-secondary:hover {
-    background: rgba(96, 165, 250, 0.2) !important;
-    border-color: #60A5FA !important;
-    color: #93C5FD !important;
-}
-
-/* --------------------------
-   Links
----------------------------*/
+/* =====================================================
+   LINKS
+   ===================================================== */
 
 a {
-    color: #60A5FA !important;
+    color: var(--creminox-accent) !important;
     text-decoration: none !important;
-    font-size: 14px !important;
     transition: all 0.2s ease !important;
 }
 
@@ -327,33 +228,73 @@ a:hover {
     text-decoration: underline !important;
 }
 
-/* --------------------------
-   Social Providers
----------------------------*/
+/* =====================================================
+   ALERTS / MESSAGES
+   ===================================================== */
+
+.pf-c-alert,
+.alert-error,
+.alert-warning,
+.alert-success,
+.alert-info {
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    margin-bottom: 16px !important;
+    font-size: 14px !important;
+}
+
+.alert-error,
+.pf-m-danger {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    color: #FECACA !important;
+}
+
+.alert-warning,
+.pf-m-warning {
+    background: rgba(245, 158, 11, 0.15) !important;
+    border: 1px solid rgba(245, 158, 11, 0.5) !important;
+    color: #FEF3C7 !important;
+}
+
+.alert-success,
+.pf-m-success {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border: 1px solid rgba(16, 185, 129, 0.5) !important;
+    color: #A7F3D0 !important;
+}
+
+.pf-c-alert__icon {
+    display: none;
+}
+
+/* =====================================================
+   SOCIAL PROVIDERS
+   ===================================================== */
 
 #kc-social-providers {
-    margin-top: 20px;
-    padding-top: 16px;
+    margin-top: 24px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #kc-social-providers h2 {
-    color: #E5E7EB !important;
+    color: var(--creminox-text-secondary) !important;
     font-size: 13px !important;
     font-weight: 600 !important;
-    margin: 0 0 16px 0 !important;
     text-align: center !important;
+    margin-bottom: 16px !important;
 }
 
-.social-providers-wrapper {
+.social-providers-wrapper,
+.pf-v5-c-form__group-control {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-top: 12px;
 }
 
 .social-provider-btn,
-.social-list-button {
+.pf-v5-c-button.pf-m-link {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -363,7 +304,7 @@ a:hover {
     border-radius: 10px !important;
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    color: #E5E7EB !important;
+    color: var(--creminox-text) !important;
     font-size: 12px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
@@ -372,509 +313,119 @@ a:hover {
 }
 
 .social-provider-btn:hover,
-.social-list-button:hover {
+.pf-v5-c-button.pf-m-link:hover {
     background: rgba(255, 255, 255, 0.12) !important;
     border-color: rgba(255, 255, 255, 0.25) !important;
     color: #F3F4F6 !important;
 }
 
-.social-provider-icon {
-    width: 20px !important;
-    height: 20px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-}
-
-.social-provider-name,
-.social-name {
-    font-size: 12px !important;
-}
-
-/* --------------------------
-   Registro
----------------------------*/
+/* =====================================================
+   REGISTRATION / INFO
+   ===================================================== */
 
 #kc-registration-container,
-.signup-section {
+#kc-info {
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
-#kc-registration span {
-    color: #D1D5DB !important;
+#kc-registration span,
+#kc-info span {
+    color: var(--creminox-text-secondary) !important;
     font-size: 13px !important;
 }
 
-/* --------------------------
-   Error Page
----------------------------*/
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
-#kc-error-message {
+footer {
     text-align: center;
-}
-
-#kc-error-message .instruction {
-    color: #E5E7EB !important;
-    font-size: 14px !important;
-    margin-bottom: 12px !important;
-}
-
-.kc-feedback {
-    margin-bottom: 16px;
-}
-
-.kc-feedback .alert {
-    background: rgba(239, 68, 68, 0.15) !important;
-    border: 1px solid rgba(239, 68, 68, 0.5) !important;
-    border-radius: 10px !important;
-    color: #FECACA !important;
-    padding: 12px 16px !important;
-    font-size: 14px !important;
-}
-
-/* --------------------------
-   Info Section
----------------------------*/
-
-#kc-info,
-.info-wrapper {
-    margin-top: 20px;
-    color: #D1D5DB;
-    text-align: center;
-    font-size: 12px;
-}
-
-/* --------------------------
-   Body Content
----------------------------*/
-
-.login-pf-body {
-    width: 100%;
-}
-
-/* --------------------------
-   Responsive
----------------------------*/
-
-/* --------------------------
-   Botón Primary (Login)
----------------------------*/
-
-#kc-form-buttons {
-    margin-top: 8px;
-    margin-bottom: 0;
-}
-
-.pf-v5-c-button.pf-m-primary,
-input[type="submit"],
-button[type="submit"],
-#kc-login {
-    width: 100% !important;
-    height: 50px !important;
-    border: none !important;
-    border-radius: 10px !important;
-    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
-    color: white !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.pf-v5-c-button.pf-m-primary:hover,
-input[type="submit"]:hover,
-button[type="submit"]:hover,
-#kc-login:hover {
-    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%) !important;
-    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
-    transform: translateY(-2px);
-}
-
-.pf-v5-c-button.pf-m-primary:active,
-input[type="submit"]:active,
-button[type="submit"]:active,
-#kc-login:active {
-    transform: translateY(0);
-}
-
-/* --------------------------
-   Botones secundarios
----------------------------*/
-
-.pf-v5-c-button.pf-m-secondary,
-a.pf-v5-c-button {
-    color: #60A5FA !important;
-    background: transparent !important;
-    border: 1px solid rgba(96, 165, 250, 0.3) !important;
-    border-radius: 8px !important;
-    padding: 10px 16px !important;
-    font-size: 14px !important;
-    transition: all 0.25s ease !important;
-}
-
-.pf-v5-c-button.pf-m-secondary:hover,
-a.pf-v5-c-button:hover {
-    background: rgba(96, 165, 250, 0.1) !important;
-    border-color: #60A5FA !important;
-    color: #93C5FD !important;
-}
-
-/* --------------------------
-   Links
----------------------------*/
-
-a {
-    color: #60A5FA;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.2s ease;
-}
-
-a:hover {
-    color: #93C5FD;
-    text-decoration: underline;
-}
-
-/* --------------------------
-   Opciones (Remember me)
----------------------------*/
-
-.pf-v5-c-check {
-    margin-bottom: 12px;
-}
-
-.pf-v5-c-check__label {
-    color: #D1D5DB !important;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.pf-v5-c-check__input {
-    cursor: pointer;
-}
-
-.checkbox label {
-    color: #E5E7EB !important;
-}
-
-/* --------------------------
-   Separadores
----------------------------*/
-
-.pf-v5-c-divider {
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    margin: 16px 0 !important;
-}
-
-/* --------------------------
-   Textos secundarios
----------------------------*/
-
-.pf-v5-c-form__helper-text {
-    color: #9CA3AF;
-    font-size: 13px;
-    margin-top: 6px;
-}
-
-/* --------------------------
-   Mensajes de error
----------------------------*/
-
-.pf-v5-c-alert,
-.pf-v5-c-alert.pf-m-danger {
-    background: rgba(239, 68, 68, 0.15) !important;
-    border: 1px solid rgba(239, 68, 68, 0.5) !important;
-    border-radius: 10px !important;
-    color: #FECACA !important;
-    margin-bottom: 16px;
-    padding: 12px 16px;
-}
-
-/* --------------------------
-   Opciones sociales / Alternativas
----------------------------*/
-
-#kc-social-providers {
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.login-pf-signup {
-    text-align: center;
-}
-
-.pf-v5-c-login__main-footer-band-item {
-    margin-bottom: 10px;
-}
-
-.pf-v5-c-login__main-footer-band-item-title {
-    color: #D1D5DB;
     font-size: 12px;
-    margin-bottom: 10px;
-    text-align: center;
+    color: var(--creminox-text-secondary);
 }
 
-.kcSocialProvidersClass {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.pf-v5-c-button.kcSocialProviderButtonClass {
-    height: 45px !important;
-    padding: 0 !important;
-    border-radius: 10px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    font-size: 11px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 100% !important;
-}
-
-.pf-v5-c-button.kcSocialProviderButtonClass:hover {
-    background: rgba(255, 255, 255, 0.12) !important;
-    border-color: rgba(255, 255, 255, 0.25) !important;
-}
-
-.pf-v5-c-button.kcSocialProviderButtonClass .kcIconSocialProviderClass {
-    width: 20px !important;
-    height: 20px !important;
-    background-size: contain !important;
+footer p {
     margin: 0;
 }
 
-.pf-v5-c-button__text {
-    font-size: 11px !important;
-}
-
-/* --------------------------
-   Formulario opciones
----------------------------*/
-
-#kc-form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    font-size: 13px;
-}
-
-.kcFormOptionsWrapperClass {
-    text-align: right;
-}
-
-#kc-info {
-    margin-top: 20px;
-    color: #D1D5DB;
-    text-align: center;
-    font-size: 12px;
-}
-
-/* --------------------------
-   Sección Header
----------------------------*/
-
-.login-pf-header h1 {
-    display: none;
-}
-
-.login-pf-body {
-    margin: 0;
-}
-
-/* --------------------------
-   Social Providers
----------------------------*/
-
-#kc-social-providers h2 {
-    color: #E5E7EB;
-    font-size: 13px;
-    font-weight: 600;
-    margin: 24px 0 16px 0;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 24px;
-}
-
-.social-providers-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 12px;
-}
-
-.social-provider-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: 45px;
-    padding: 0 12px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #E5E7EB;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    cursor: pointer;
-}
-
-.social-provider-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-    color: #F3F4F6;
-}
-
-.social-provider-icon {
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.social-provider-name {
-    font-size: 12px;
-}
-
-/* --------------------------
-   Registro
----------------------------*/
-
-#kc-registration-container {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-#kc-registration span {
-    color: #D1D5DB;
-    font-size: 13px;
-}
-
-#kc-registration a {
-    color: #60A5FA;
-    font-weight: 600;
-}
-
-#kc-registration a:hover {
-    color: #93C5FD;
-}
-
-/* --------------------------
-   Error messages
----------------------------*/
-
-.kc-feedback {
-    margin-bottom: 16px;
-}
-
-.kc-feedback .alert {
-    background: rgba(239, 68, 68, 0.15);
-    border: 1px solid rgba(239, 68, 68, 0.5);
-    border-radius: 10px;
-    color: #FECACA;
-    padding: 12px 16px;
-    font-size: 14px;
-}
-
-#kc-error-message {
-    text-align: center;
-}
-
-#kc-error-message .instruction {
-    color: #E5E7EB;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-#kc-error-message a {
-    color: #60A5FA;
-    font-weight: 600;
-}
-
-/* --------------------------
-   Responsive
----------------------------*/
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
 
 @media (max-width: 768px) {
-    .card-pf {
-        padding: 35px 25px;
+    .pf-v5-c-card-creminox {
+        padding: 35px 25px !important;
     }
-    
-    #kc-header-wrapper {
+
+    .kc-logo-creminox {
         height: 70px;
         margin-bottom: 20px;
     }
-    
-    label {
-        font-size: 13px;
-    }
-    
-    input {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    .pf-v5-c-form-control {
         height: 45px !important;
         font-size: 14px !important;
     }
-    
-    .pf-v5-c-button.pf-m-primary,
+
     input[type="submit"],
     button[type="submit"],
-    #kc-login {
+    .pf-v5-c-button.pf-m-primary {
         height: 45px !important;
         font-size: 15px !important;
     }
-    
-    .kcSocialProvidersClass {
+
+    .social-providers-wrapper,
+    .pf-v5-c-form__group-control {
         grid-template-columns: 1fr;
     }
-    
-    .pf-v5-c-button.kcSocialProviderButtonClass {
-        height: 40px !important;
-    }
-    
-    .social-providers-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .social-provider-btn {
-        height: 42px;
+
+    .social-provider-btn,
+    .pf-v5-c-button.pf-m-link {
+        height: 42px !important;
     }
 }
 
 @media (max-width: 600px) {
-    .card-pf {
-        padding: 28px 20px;
-        border-radius: 18px;
+    .pf-v5-c-card-creminox {
+        padding: 28px 20px !important;
+        border-radius: 18px !important;
     }
-    
-    #kc-header-wrapper {
+
+    .kc-logo-creminox {
         height: 60px;
     }
-    
-    .social-providers-wrapper {
-        grid-template-columns: 1fr;
-        gap: 10px;
+
+    label {
+        font-size: 13px !important;
     }
-    
-    .social-provider-btn {
-        height: 40px;
-        font-size: 11px;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    .pf-v5-c-form-control {
+        height: 42px !important;
+        font-size: 13px !important;
     }
-    
-    #kc-social-providers h2 {
-        font-size: 12px;
-        margin: 20px 0 14px 0;
+
+    input[type="submit"],
+    button[type="submit"],
+    .pf-v5-c-button.pf-m-primary {
+        height: 42px !important;
+        font-size: 14px !important;
+    }
+
+    .social-provider-btn,
+    .pf-v5-c-button.pf-m-link {
+        height: 40px !important;
+        font-size: 11px !important;
     }
 }

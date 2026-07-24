@@ -1,58 +1,82 @@
+<#import "footer.ftl" as loginFooter>
+<#import "theme-resources.ftl" as themeResourceTags>
+
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false>
 <!DOCTYPE html>
-<html class="login-pf" lang="${lang!}">
+<html class="${properties.kcHtmlClass!}" lang="${lang!'en'}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title!}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+    
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
             <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
+    
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
-            <link href="${url.resourcesPath}/css/${style}" rel="stylesheet" />
+            <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
+    
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
-            <script src="${url.resourcesPath}/js/${script}" type="text/javascript"></script>
+            <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
         </#list>
     </#if>
 </head>
-<body class="login-pf-body">
-    <div class="login-pf-page">
-        <div id="kc-container" class="login-pf-container">
-            <div class="card-pf login-pf">
-                <div class="login-pf-header">
-                    <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"></div>
-                </div>
-                
-                <div class="login-pf-body">
-                    <#if displayMessage && message?has_content>
-                        <div class="kc-feedback">
-                            <div class="alert ${message.type}">
-                                <span>${kcSanitize(message.summary)?no_esc}</span>
-                            </div>
-                        </div>
-                    </#if>
-                    
-                    <#nested "form">
-                </div>
-                
-                <#if displayInfo>
-                    <div id="kc-info">
-                        <#nested "info">
-                    </div>
-                </#if>
-                
-                <#nested "socialProviders">
-            </div>
+
+<body class="${properties.kcBodyClass!}">
+
+<div class="${properties.kcLoginClass!}">
+    <div id="kc-header" class="${properties.kcHeaderClass!}">
+        <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">
+            <div id="logo"></div>
         </div>
     </div>
+
+    <div class="${properties.kcFormCardClass!}">
+        <header class="${properties.kcFormHeaderClass!}">
+            <h1 id="kc-page-title"><#nested "header"></h1>
+        </header>
+
+        <div id="kc-content">
+            <div id="kc-content-wrapper">
+                <#if displayMessage && message?has_content>
+                    <div class="alert-${message.type} ${properties.kcAlertClass!} pf-m-<#if message.type = 'error'>danger<#else>${message.type}</#if>">
+                        <div class="pf-c-alert__icon">
+                            <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
+                            <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
+                            <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
+                            <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
+                        </div>
+                        <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
+                    </div>
+                </#if>
+
+                <#nested "form">
+
+                <#nested "socialProviders">
+
+                <#if displayInfo>
+                    <div id="kc-info" class="${properties.kcSignUpClass!}">
+                        <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                            <#nested "info">
+                        </div>
+                    </div>
+                </#if>
+            </div>
+        </div>
+
+        <@loginFooter.content/>
+    </div>
+</div>
+
 </body>
 </html>
 </#macro>
