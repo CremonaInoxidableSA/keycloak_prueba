@@ -1,3 +1,4 @@
+<#macro registrationLayout bodyClass="" displayInfo=false displayWatermark=true>
 <!DOCTYPE html>
 <html class="login-pf">
 <head>
@@ -25,14 +26,8 @@
 <body class="login-pf-body">
     <div class="login-pf-page">
         <div id="kc-container" class="login-pf-container">
-            <div id="kc-header" class="login-pf-header">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">
-                    <#if realm.displayNameHtml?has_content>
-                        ${realm.displayNameHtml}
-                    <#else>
-                        ${realm.displayName}
-                    </#if>
-                </div>
+            <div class="login-pf-header">
+                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"></div>
             </div>
             <div class="card-pf login-pf">
                 <#nested>
@@ -41,3 +36,4 @@
     </div>
 </body>
 </html>
+</#macro>
