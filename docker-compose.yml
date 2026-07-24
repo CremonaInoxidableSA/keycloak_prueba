@@ -37,6 +37,8 @@ services:
     image: quay.io/keycloak/keycloak:26.7.0
     container_name: keycloak
     restart: always
+    volumes:
+    - ./themes:/opt/keycloak/themes
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: Ki?6#p&2e#NL+%Y8
@@ -52,7 +54,11 @@ services:
       KC_PROXY: reencrypt
       KC_PROXY_HEADERS: xforwarded
       KC_METRICS_ENABLED: "true"
-    command: start
+    command:
+      - start
+      - --spi-theme-static-max-age=-1
+      - --spi-theme-cache-themes=false
+      - --spi-theme-cache-templates=false
     ports:
       - "8080:8080"
     depends_on:
