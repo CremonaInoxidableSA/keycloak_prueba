@@ -1,118 +1,273 @@
-/* Fondo */
-.login-pf {
-    background:
-        linear-gradient(
-            rgba(10,25,40,.70),
-            rgba(10,25,40,.70)
-        ),
-        url("../img/background.jpg");
+/* ===========================================================
+   CREMINOX LOGIN THEME
+   =========================================================== */
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* --------------------------
+   Fondo
+---------------------------*/
+
+html,
+body,
+.login-pf,
+.login-pf body,
+.login-pf-page{
+
+    width:100%;
+    height:100%;
+    margin:0;
 }
 
-/* Caja principal */
+body{
 
-.card-pf {
+    background:
+        linear-gradient(rgba(15,23,42,.70),rgba(15,23,42,.70)),
+        url("../img/background.jpg") center center / cover no-repeat fixed;
 
-    border-radius:16px;
+    font-family:
+        Inter,
+        Segoe UI,
+        Roboto,
+        Arial,
+        sans-serif;
+
+}
+
+/* --------------------------
+   Contenedor principal
+---------------------------*/
+
+.login-pf-page{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+/* --------------------------
+   Tarjeta
+---------------------------*/
+
+.card-pf{
+
+    width:100%;
+
+    max-width:500px;
+
+    background:rgba(17,24,39,.93);
 
     border:none;
 
+    border-radius:22px;
+
+    padding:42px;
+
     box-shadow:
-        0 10px 35px rgba(0,0,0,.30);
+        0 25px 70px rgba(0,0,0,.55);
 
-    background:#ffffff;
-
-    max-width:430px;
+    backdrop-filter:blur(8px);
 
 }
 
-/* Logo */
+/* --------------------------
+   Header
+---------------------------*/
+
+#kc-header{
+
+    display:none;
+
+}
 
 #kc-header-wrapper{
 
-    background-image:url("../img/logo.png");
+    text-indent:-99999px;
 
-    background-repeat:no-repeat;
+    background:url("../img/logo.png") center no-repeat;
 
-    background-position:center;
+    background-size:320px;
 
-    background-size:220px;
+    height:110px;
 
-    height:80px;
-
-    text-indent:-9999px;
+    margin-bottom:25px;
 
 }
 
-/* Título */
+/* --------------------------
+   Ocultar título
+---------------------------*/
 
 #kc-page-title{
 
-    color:#1d3557;
+    display:none;
 
-    font-size:24px;
+}
+
+/* --------------------------
+   Labels
+---------------------------*/
+
+label{
+
+    color:#F3F4F6 !important;
+
+    font-size:15px;
 
     font-weight:600;
 
-}
-
-/* Inputs */
-
-.pf-v5-c-form-control{
-
-    border-radius:10px;
-
-    border:1px solid #d0d7de;
-
-    padding:12px;
+    margin-bottom:8px;
 
 }
 
-.pf-v5-c-form-control:focus{
+/* --------------------------
+   Inputs
+---------------------------*/
 
-    border-color:#0066cc;
+input{
 
-    box-shadow:0 0 0 3px rgba(0,102,204,.20);
+    height:54px !important;
 
-}
+    border-radius:12px !important;
 
-/* Botón */
+    border:1px solid #374151 !important;
 
-.pf-v5-c-button.pf-m-primary{
+    background:#1F2937 !important;
 
-    background:#0066cc;
+    color:white !important;
 
-    border:none;
-
-    border-radius:10px;
-
-    padding:12px;
-
-    font-weight:600;
+    padding:0 16px !important;
 
     transition:.25s;
 
 }
 
-.pf-v5-c-button.pf-m-primary:hover{
+input::placeholder{
 
-    background:#0053a6;
+    color:#9CA3AF;
 
 }
 
-/* Links */
+input:focus{
+
+    border-color:#3B82F6 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(59,130,246,.20) !important;
+
+}
+
+/* --------------------------
+   Botón Login
+---------------------------*/
+
+.pf-v5-c-button.pf-m-primary,
+input[type=submit]{
+
+    width:100%;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#EF4444 !important;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.pf-v5-c-button.pf-m-primary:hover,
+input[type=submit]:hover{
+
+    background:#DC2626 !important;
+
+}
+
+/* --------------------------
+   Links
+---------------------------*/
 
 a{
 
-    color:#0066cc;
+    color:#93C5FD !important;
+
+    text-decoration:none;
 
 }
 
 a:hover{
 
-    color:#004080;
+    color:white !important;
+
+}
+
+/* --------------------------
+   Remember me
+---------------------------*/
+
+.checkbox label{
+
+    color:#E5E7EB !important;
+
+}
+
+/* --------------------------
+   Mensajes de error
+---------------------------*/
+
+.pf-v5-c-alert{
+
+    border-radius:10px;
+
+}
+
+/* --------------------------
+   Footer
+---------------------------*/
+
+#kc-info{
+
+    margin-top:25px;
+
+    color:#D1D5DB;
+
+    text-align:center;
+
+}
+
+/* --------------------------
+   Responsive
+---------------------------*/
+
+@media (max-width:600px){
+
+.card-pf{
+
+    padding:28px;
+
+    border-radius:18px;
+
+}
+
+#kc-header-wrapper{
+
+    background-size:240px;
+
+}
 
 }
