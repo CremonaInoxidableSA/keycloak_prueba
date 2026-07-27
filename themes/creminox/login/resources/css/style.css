@@ -415,7 +415,6 @@ a:hover {
    ===================================================== */
 
 #kc-reset-info2 {
-    margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
@@ -454,7 +453,6 @@ a:hover {
 
 footer {
     text-align: center;
-    margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 12px;
