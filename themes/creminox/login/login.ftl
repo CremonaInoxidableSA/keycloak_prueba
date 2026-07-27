@@ -43,10 +43,10 @@
                                         <label>
                                             <#if login.rememberMe??>
                                                 <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox" checked> 
-                                                <span>${msg("rememberMe")}</span>
+                                                <span>${msg("Recordarme")}</span>
                                             <#else>
                                                 <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox"> 
-                                                <span>${msg("rememberMe")}</span>
+                                                <span>${msg("Recordarme")}</span>
                                             </#if>
                                         </label>
                                     </div>
@@ -61,7 +61,7 @@
 
                         <#if realm.resetPasswordAllowed>
                             <div id="kc-forgot-password" class="${properties.kcFormGroupClass!}">
-                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("forgotPasswordLinkText")}</a>
+                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("¿No recordás tu contraseña? Ingresa acá")}</a>
                             </div>
                         </#if>
                     </form>
@@ -71,7 +71,7 @@
     <#elseif section = "socialProviders">
         <#if realm.password && social?? && social.providers?has_content>
             <div id="kc-social-providers">
-                <h2>${msg("socialProviderMessage")}</h2>
+                <h2>${msg("Si querés, también podes ingresar con tu correo corporativo.")}</h2>
                 <div class="social-providers-wrapper">
                     <#list social.providers as p>
                         <a id="social-${p.alias}" class="social-provider-btn" type="button" href="${p.loginUrl}">

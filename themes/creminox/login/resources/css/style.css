@@ -414,6 +414,19 @@ a:hover {
    REGISTRATION / INFO
    ===================================================== */
 
+#kc-reset-info2 {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+#kc-reset-info-wrapper2 {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+}
+
 #kc-registration-container,
 #kc-info,
 #kc-reset-info {

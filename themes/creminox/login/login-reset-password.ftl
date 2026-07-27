@@ -22,8 +22,8 @@
                             <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Submit">${msg("ENVIAR")}</button>
                         </div>
                     </div>
-                    <div id="kc-reset-info" class="${properties.kcFormGroupClass!}">
-                        <div id="kc-reset-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                    <div id="kc-reset-info2" class="${properties.kcFormGroupClass!}">
+                        <div id="kc-reset-info-wrapper2" class="${properties.kcInfoAreaWrapperClass!}">
                             ${msg("Ingresá tu correo electrónico. Ahi vas a recibir el paso a paso para recuperar tu contraseña.")}
                         </div>
                     </div>
@@ -31,6 +31,6 @@
             </div>
         </div>
     <#elseif section = "info">
-        ${msg("emailInstruction")}
+        ${msg("Ingresá tu correo electrónico. Ahi vas a recibir el paso a paso para recuperar tu contraseña.")}
     </#if>
 </@layout.registrationLayout>
