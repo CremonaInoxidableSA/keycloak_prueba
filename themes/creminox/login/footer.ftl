@@ -1,5 +1,5 @@
 <#macro content>
     <footer class="${properties.kcFormFooterClass!}">
-        <p>${msg("Gracias por ser parte de nosotros")}</p>
+        <p>${msg("footerText")}</p>
     </footer>
 </#macro>

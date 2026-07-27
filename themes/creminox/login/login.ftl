@@ -25,7 +25,7 @@
                         </#if>
 
                         <div class="${properties.kcFormGroupClass!}">
-                            <label for="password" class="${properties.kcLabelClass!}">${msg("Contraseña")}</label>
+                            <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
                             <input tabindex="3" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="current-password"
                                    aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                             />
@@ -43,10 +43,10 @@
                                         <label>
                                             <#if login.rememberMe??>
                                                 <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox" checked> 
-                                                <span>${msg("Recordarme")}</span>
+                                                <span>${msg("rememberMe")}</span>
                                             <#else>
                                                 <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox"> 
-                                                <span>${msg("Recordarme")}</span>
+                                                <span>${msg("rememberMe")}</span>
                                             </#if>
                                         </label>
                                     </div>
@@ -61,7 +61,7 @@
 
                         <#if realm.resetPasswordAllowed>
                             <div id="kc-forgot-password" class="${properties.kcFormGroupClass!}">
-                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("¿No recordás tu contraseña? Ingresa acá")}</a>
+                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("forgotPasswordLinkText")}</a>
                             </div>
                         </#if>
                     </form>
@@ -71,7 +71,7 @@
     <#elseif section = "socialProviders">
         <#if realm.password && social?? && social.providers?has_content>
             <div id="kc-social-providers">
-                <h2>${msg("Si querés, también podes ingresar con tu correo corporativo.")}</h2>
+                <h2>${msg("socialProviderMessage")}</h2>
                 <div class="social-providers-wrapper">
                     <#list social.providers as p>
                         <a id="social-${p.alias}" class="social-provider-btn" type="button" href="${p.loginUrl}">
