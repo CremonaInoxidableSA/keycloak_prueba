@@ -13,7 +13,7 @@
                         <input type="password" id="password-new" name="password-new" class="${properties.kcInputClass!}" autocomplete="new-password" />
                         <#if messagesPerField.existsError('password-new')>
                             <span id="input-error-password-new" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                <@translateFieldError messagesPerField.get('password-new') />
+                                ${kcSanitize(messagesPerField.get('password-new'))?no_esc}
                             </span>
                         </#if>
                     </div>
@@ -25,7 +25,7 @@
                         <input type="password" id="password-confirm" name="password-confirm" class="${properties.kcInputClass!}" autocomplete="new-password" />
                         <#if messagesPerField.existsError('password-confirm')>
                             <span id="input-error-password-confirm" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                <@translateFieldError messagesPerField.get('password-confirm') />
+                                ${kcSanitize(messagesPerField.get('password-confirm'))?no_esc}
                             </span>
                         </#if>
                     </div>

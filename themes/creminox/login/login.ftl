@@ -18,7 +18,7 @@
                                 />
                                 <#if messagesPerField.existsError('username','password')>
                                     <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                        <@translateFieldError messagesPerField.getFirstError('username','password') />
+                                        ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
                                     </span>
                                 </#if>
                             </div>
@@ -31,7 +31,7 @@
                             />
                             <#if usernameHidden?? && messagesPerField.existsError('username','password')>
                                 <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    <@translateFieldError messagesPerField.getFirstError('username','password') />
+                                    ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
                                 </span>
                             </#if>
                         </div>

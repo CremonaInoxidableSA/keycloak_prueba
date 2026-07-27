@@ -13,7 +13,7 @@
                         <input type="text" id="username" name="username" class="${properties.kcInputClass!}" value="${(auth.attemptedUsername!'')}" autofocus autocomplete="username" />
                         <#if messagesPerField.existsError('username')>
                             <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                <@translateFieldError messagesPerField.get('username') />
+                                ${kcSanitize(messagesPerField.get('username'))?no_esc}
                             </span>
                         </#if>
                     </div>
