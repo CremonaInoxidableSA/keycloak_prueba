@@ -1,5 +1,5 @@
 <#macro content>
     <footer class="${properties.kcFormFooterClass!}">
-        <p>${msg("Gracias por ser parte de nosotros ")}</p>
+        <p>&copy; 2024 CREMINOX. ${msg("login")}</p>
     </footer>
 </#macro>

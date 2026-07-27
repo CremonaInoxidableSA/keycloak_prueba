@@ -10,7 +10,7 @@
                         <#if !usernameHidden??>
                             <div class="${properties.kcFormGroupClass!}">
                                 <label for="username" class="${properties.kcLabelClass!}">
-                                    <#if !realm.loginWithEmailAllowed>${msg("Usuario o correo")}<#elseif !realm.registrationEmailAsUsername>${msg("Usuario o correo")}<#else>${msg("Usuario o correo")}</#if>
+                                    <#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("username")}<#else>${msg("username")}</#if>
                                 </label>
                                 <input tabindex="2" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text"
                                        autofocus autocomplete="username"
@@ -25,7 +25,7 @@
                         </#if>
 
                         <div class="${properties.kcFormGroupClass!}">
-                            <label for="password" class="${properties.kcLabelClass!}">${msg("Contraseña")}</label>
+                            <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
                             <input tabindex="3" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="current-password"
                                    aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                             />
@@ -43,10 +43,10 @@
                                         <label>
                                             <#if login.rememberMe??>
                                                 <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox" checked> 
-                                                <span>${msg("Recordarme")}</span>
+                                                <span>${msg("rememberMe")}</span>
                                             <#else>
                                                 <input tabindex="4" id="rememberMe" name="rememberMe" type="checkbox"> 
-                                                <span>${msg("Recordarme")}</span>
+                                                <span>${msg("rememberMe")}</span>
                                             </#if>
                                         </label>
                                     </div>
@@ -56,12 +56,12 @@
 
                         <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
                             <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
-                            <input tabindex="5" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("INGRESAR")}"/>
+                            <input tabindex="5" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                         </div>
 
                         <#if realm.resetPasswordAllowed>
                             <div id="kc-forgot-password" class="${properties.kcFormGroupClass!}">
-                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("¿No recordás tu contraseña? Ingresa acá")}</a>
+                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
                             </div>
                         </#if>
                     </form>
@@ -71,7 +71,7 @@
     <#elseif section = "socialProviders">
         <#if realm.password && social?? && social.providers?has_content>
             <div id="kc-social-providers">
-                <h2>${msg("Si querés, también podes ingresar con tu correo corporativo.")}</h2>
+                <h2>${msg("loginWithOIDCMessage")}</h2>
                 <div class="social-providers-wrapper">
                     <#list social.providers as p>
                         <a id="social-${p.alias}" class="social-provider-btn" type="button" href="${p.loginUrl}">

@@ -1,7 +1,7 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('email'); section>
     <#if section = "header">
-        ¿Olvidaste tu contraseña?
+        ${msg("resetPasswordTitle")}
     <#elseif section = "form">
         <div id="kc-form">
             <div id="kc-form-wrapper">
@@ -9,14 +9,14 @@
                     <div class="${properties.kcFormGroupClass!}">
                         <div id="kc-form-options">
                             <div class="instruction">
-                                <p>Ingresá tu correo electrónico. Allí vas a recibir el paso a paso para recuperar tu contraseña.</p>
+                                <p>${msg("resetPasswordMessage")}</p>
                             </div>
                         </div>
                     </div>
                     <div class="${properties.kcFormGroupClass!}">
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                             <#if actionUri?has_content>
-                                <a href="${actionUri}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" id="kc-action-button">CONTINUAR</a>
+                                <a href="${actionUri}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" id="kc-action-button">${msg("continue")}</a>
                             </#if>
                         </div>
                     </div>
