@@ -24,7 +24,7 @@
                     </div>
                     <div id="kc-reset-info" class="${properties.kcFormGroupClass!}">
                         <div id="kc-reset-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                            ${msg("emailInstruction")}
+                            ${msg("PRUEBA ASD")}
                         </div>
                     </div>
                 </form>
