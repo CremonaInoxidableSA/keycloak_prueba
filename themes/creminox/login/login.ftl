@@ -10,7 +10,7 @@
                         <#if !usernameHidden??>
                             <div class="${properties.kcFormGroupClass!}">
                                 <label for="username" class="${properties.kcLabelClass!}">
-                                    <#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("username")}<#else>${msg("username")}</#if>
+                                    Usuario o correo
                                 </label>
                                 <input tabindex="2" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text"
                                        autofocus autocomplete="username"
@@ -56,12 +56,12 @@
 
                         <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
                             <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
-                            <input tabindex="5" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                            <input tabindex="5" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="Ingresar"/>
                         </div>
 
                         <#if realm.resetPasswordAllowed>
                             <div id="kc-forgot-password" class="${properties.kcFormGroupClass!}">
-                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
+                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">¿Olvidaste tu contraseña?</a>
                             </div>
                         </#if>
                     </form>
