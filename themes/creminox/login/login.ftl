@@ -10,7 +10,7 @@
                         <#if !usernameHidden??>
                             <div class="${properties.kcFormGroupClass!}">
                                 <label for="username" class="${properties.kcLabelClass!}">
-                                    <#if !realm.loginWithEmailAllowed>${msg("Usuario o correo")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("Usuario o correo")}</#if>
+                                    <#if !realm.loginWithEmailAllowed>${msg("Usuario o correo")}<#elseif !realm.registrationEmailAsUsername>${msg("Usuario o correo")}<#else>${msg("Usuario o correo")}</#if>
                                 </label>
                                 <input tabindex="2" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text"
                                        autofocus autocomplete="username"
@@ -61,25 +61,17 @@
 
                         <#if realm.resetPasswordAllowed>
                             <div id="kc-forgot-password" class="${properties.kcFormGroupClass!}">
-                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
+                                <a tabindex="6" href="${url.loginResetCredentialsUrl}">${msg("¿No recordás tu contraseña? Ingresa acá")}</a>
                             </div>
                         </#if>
                     </form>
                 </#if>
             </div>
         </div>
-    <#elseif section = "info">
-        <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
-            <div id="kc-registration-container">
-                <div id="kc-registration">
-                    <span>${msg("noAccount")} <a tabindex="7" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
-                </div>
-            </div>
-        </#if>
     <#elseif section = "socialProviders">
         <#if realm.password && social?? && social.providers?has_content>
             <div id="kc-social-providers">
-                <h2>${msg("identity-provider-login-label")}</h2>
+                <h2>${msg("Si querés, también podes ingresar con tu correo corporativo.")}</h2>
                 <div class="social-providers-wrapper">
                     <#list social.providers as p>
                         <a id="social-${p.alias}" class="social-provider-btn" type="button" href="${p.loginUrl}">
