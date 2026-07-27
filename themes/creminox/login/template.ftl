@@ -20,6 +20,47 @@
             <#local translated = "Código inválido">
         <#elseif message?contains("Please specify password")>
             <#local translated = "Por favor, especifique la contraseña.">
+        <#elseif message?contains("Please specify username")>
+            <#local translated = "Por favor, especifique el usuario o correo.">
+        <#elseif message?contains("Password confirmation does not match")>
+            <#local translated = "La confirmación de contraseña no coincide">
+        <#elseif message?contains("Passwords don't match")>
+            <#local translated = "Las contraseñas no coinciden">
+        <#elseif message?contains("Invalid email address")>
+            <#local translated = "Dirección de correo inválida">
+        <#elseif message?contains("User exists with same username")>
+            <#local translated = "Ya existe un usuario con este nombre">
+        <#elseif message?contains("User exists with same email")>
+            <#local translated = "Ya existe un usuario con este correo">
+        <#elseif message?contains("Please specify username or password")>
+            <#local translated = "Por favor, especifique usuario o contraseña">
+        <#elseif message?contains("Account is not fully set up")>
+            <#local translated = "La cuenta no está completamente configurada">
+        <#elseif message?contains("Account disabled")>
+            <#local translated = "La cuenta ha sido deshabilitada">
+        <#elseif message?contains("Account temporarily disabled")>
+            <#local translated = "La cuenta está temporalmente deshabilitada">
+        </#if>
+        ${translated}
+    </#if>
+</#macro>
+
+<#-- MACRO PARA TRADUCIR ERRORES DE VALIDACIÓN DE CAMPOS -->
+<#macro translateFieldError error>
+    <#if error?has_content>
+        <#local translated = error>
+        <#if error?contains("Invalid username or password")>
+            <#local translated = "Usuario o contraseña inválidos">
+        <#elseif error?contains("Please specify password")>
+            <#local translated = "Por favor, especifique la contraseña.">
+        <#elseif error?contains("Please specify username")>
+            <#local translated = "Por favor, especifique el usuario o correo.">
+        <#elseif error?contains("Password confirmation does not match")>
+            <#local translated = "La confirmación de contraseña no coincide">
+        <#elseif error?contains("Passwords don't match")>
+            <#local translated = "Las contraseñas no coinciden">
+        <#elseif error?contains("Invalid email address")>
+            <#local translated = "Dirección de correo inválida">
         </#if>
         ${translated}
     </#if>
