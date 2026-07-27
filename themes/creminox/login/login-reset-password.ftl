@@ -22,7 +22,11 @@
                             <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Submit">${msg("ENVIAR")}</button>
                         </div>
                     </div>
-
+                    <div id="kc-reset-info" class="${properties.kcFormGroupClass!}">
+                        <div id="kc-reset-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                            ${msg("emailInstruction")}
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
