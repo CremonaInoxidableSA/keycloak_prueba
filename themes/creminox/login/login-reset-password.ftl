@@ -24,7 +24,7 @@
                     </div>
                     <div id="kc-reset-info" class="${properties.kcFormGroupClass!}">
                         <div id="kc-reset-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                            ${msg("PRUEBA ASD")}
+                            ${msg("Ingresá tu correo electrónico. Ahi vas a recibir el paso a paso para recuperar tu contraseña.")}
                         </div>
                     </div>
                 </form>
