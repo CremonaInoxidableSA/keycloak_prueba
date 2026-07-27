@@ -30,4 +30,7 @@
                 </form>
             </div>
         </div>
+    <#elseif section = "info">
+        ${msg("emailInstruction")}
+    </#if>
 </@layout.registrationLayout>
