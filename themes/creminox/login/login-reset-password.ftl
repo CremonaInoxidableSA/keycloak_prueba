@@ -26,6 +26,6 @@
             </div>
         </div>
     <#elseif section = "info">
-        ${msg("emailInstruction")}
+        ${msg("Prueba mensaje")}
     </#if>
 </@layout.registrationLayout>
