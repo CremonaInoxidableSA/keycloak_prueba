@@ -8,7 +8,7 @@
                 <form id="kc-change-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
                     <div class="${properties.kcFormGroupClass!}">
                         <label for="password-new" class="${properties.kcLabelClass!}">
-                            ${msg("passwordNew")}
+                            ${msg("Nueva contraseña")}
                         </label>
                         <input type="password" id="password-new" name="password-new" class="${properties.kcInputClass!}" autocomplete="new-password" />
                         <#if messagesPerField.existsError('password-new')>
@@ -20,7 +20,7 @@
 
                     <div class="${properties.kcFormGroupClass!}">
                         <label for="password-confirm" class="${properties.kcLabelClass!}">
-                            ${msg("passwordConfirm")}
+                            ${msg("Confirmar nueva contraseña")}
                         </label>
                         <input type="password" id="password-confirm" name="password-confirm" class="${properties.kcInputClass!}" autocomplete="new-password" />
                         <#if messagesPerField.existsError('password-confirm')>

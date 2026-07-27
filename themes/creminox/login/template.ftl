@@ -18,6 +18,8 @@
             <#local translated = "El enlace ha caducado">
         <#elseif message?contains("Invalid code")>
             <#local translated = "Código inválido">
+        <#elseif message?contains("Please specify password")>
+            <#local translated = "Por favor, especifique la contraseña.">
         </#if>
         ${translated}
     </#if>
