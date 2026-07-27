@@ -1,6 +1,28 @@
 <#import "footer.ftl" as loginFooter>
 <#import "theme-resources.ftl" as themeResourceTags>
 
+<#-- MACRO PARA TRADUCIR MENSAJES DEL SERVIDOR -->
+<#macro translateMessage message>
+    <#if message?has_content>
+        <#local translated = message>
+        <#-- Traducir mensajes comunes del servidor -->
+        <#if message?contains("Invalid username or password")>
+            <#local translated = "Usuario o contraseña inválidos">
+        <#elseif message?contains("You should receive an email shortly with further instructions")>
+            <#local translated = "Deberías recibir un correo en breve con más instrucciones">
+        <#elseif message?contains("You need to change your password to activate your account")>
+            <#local translated = "Necesitas cambiar tu contraseña para activar tu cuenta">
+        <#elseif message?contains("Your login attempt timed out")>
+            <#local translated = "Tu intento de inicio de sesión caducó. El inicio de sesión comenzará desde el principio">
+        <#elseif message?contains("Link expired")>
+            <#local translated = "El enlace ha caducado">
+        <#elseif message?contains("Invalid code")>
+            <#local translated = "Código inválido">
+        </#if>
+        ${translated}
+    </#if>
+</#macro>
+
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false>
 <!DOCTYPE html>
 <html class="${properties.kcHtmlClass!}" lang="${lang!'en'}">
@@ -51,7 +73,7 @@
                             <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
                             <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
                         </div>
-                        <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
+                        <span class="${properties.kcAlertTitleClass!}"><@translateMessage message.summary /></span>
                     </div>
                 </#if>
 
