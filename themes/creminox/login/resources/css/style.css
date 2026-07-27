@@ -415,7 +415,8 @@ a:hover {
    ===================================================== */
 
 #kc-registration-container,
-#kc-info {
+#kc-info,
+#kc-reset-info {
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -426,6 +427,12 @@ a:hover {
 #kc-info span {
     color: var(--creminox-text-secondary) !important;
     font-size: 13px !important;
+}
+
+#kc-reset-info-wrapper {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
 }
 
 /* =====================================================
