@@ -8,7 +8,7 @@
                 <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
                     <div class="${properties.kcFormGroupClass!}">
                         <label for="username" class="${properties.kcLabelClass!}">
-                            Usuario o correo
+                            ${msg("usernameOrEmail")}
                         </label>
                         <input type="text" id="username" name="username" class="${properties.kcInputClass!}" value="${(auth.attemptedUsername!'')}" autofocus autocomplete="username" />
                         <#if messagesPerField.existsError('username')>
@@ -19,18 +19,18 @@
                     </div>
                     <div class="${properties.kcFormGroupClass!}">
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                            <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Submit">Enviar</button>
+                            <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Submit">${msg("doSubmit")}</button>
                         </div>
                     </div>
                     <div id="kc-reset-info2" class="${properties.kcFormGroupClass!}">
                         <div id="kc-reset-info-wrapper2" class="${properties.kcInfoAreaWrapperClass!}">
-                            Ingresa tu correo electrónico. Allí vas a recibir el paso a paso para recuperar tu contraseña.
+                            ${msg("emailInstruction")}
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     <#elseif section = "info">
-        Ingresa tu correo electrónico. Allí vas a recibir el paso a paso para recuperar tu contraseña.
+        ${msg("emailInstruction")}
     </#if>
 </@layout.registrationLayout>
