@@ -7,7 +7,7 @@
             <div id="kc-form-wrapper">
                 <div class="kc-confirm-link-info">
                     <p class="kc-confirm-link-message">
-                        ${msg("asdasdasd12312542", (newUser.firstName!'' + ' ' + newUser.lastName!'')?trim, (broker.displayName!''))}
+                        ${msg("federatedIdentityConfirmLinkMessage", (newUser.firstName!'' + ' ' + newUser.lastName!'')?trim, (broker.displayName!''))}
                     </p>
                     <p class="kc-confirm-link-submessage">
                         ${msg("confirmLinkIdpContinue")}
