@@ -9,7 +9,7 @@
                     <form id="kc-first-broker-login-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
                         <div class="kc-broker-info">
                             <p class="kc-broker-message">
-                                ${msg("federatedIdentityConfirmLinkMessage", (broker.displayName!''))}
+                                ${msg("asdasdasd", (broker.displayName!''))}
                             </p>
                         </div>
 
