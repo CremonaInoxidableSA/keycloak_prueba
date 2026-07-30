@@ -113,8 +113,11 @@ header.pf-v5-c-form__header {
     flex-direction: column !important;
 }
 
-.kc-form-wrapper-idp {
+.formulariosMargin {
     margin-bottom: 0px !important;
+    gap: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .pf-v5-c-form__group-label {
