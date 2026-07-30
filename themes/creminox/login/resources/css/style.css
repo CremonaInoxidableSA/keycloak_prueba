@@ -108,7 +108,7 @@ header.pf-v5-c-form__header {
 
 .pf-v5-c-form__group {
     gap: 10px !important;
-    margin-bottom: 18px !important;
+    /* margin-bottom: 18px !important; */
     display: flex !important;
     flex-direction: column !important;
 }
@@ -571,7 +571,7 @@ footer p {
     border: 1px solid rgba(239, 68, 68, 0.3) !important;
     border-radius: 8px !important;
     padding: 16px !important;
-    margin-bottom: 20px !important;
+    /* margin-bottom: 20px !important; */
 }
 
 .kc-broker-message,
