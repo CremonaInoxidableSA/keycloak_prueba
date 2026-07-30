@@ -108,9 +108,13 @@ header.pf-v5-c-form__header {
 
 .pf-v5-c-form__group {
     gap: 10px !important;
-    /* margin-bottom: 18px !important; */
+    margin-bottom: 18px !important;
     display: flex !important;
     flex-direction: column !important;
+}
+
+.kc-form-wrapper-idp {
+    margin-bottom: 0px !important;
 }
 
 .pf-v5-c-form__group-label {

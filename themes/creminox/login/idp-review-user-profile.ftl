@@ -4,7 +4,7 @@
         ${msg("loginIdpReviewProfileTitle")}
     <#elseif section = "form">
         <div id="kc-form">
-            <div id="kc-form-wrapper">
+            <div id="kc-form-wrapper" class="kc-form-wrapper-idp">
                 <form id="kc-idp-review-profile-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
                     <div class="kc-idp-profile-info">
                         <p class="kc-idp-profile-message">
