@@ -5,7 +5,7 @@
     <#elseif section = "form">
         <div id="kc-form">
             <div id="kc-form-wrapper">
-                <form id="kc-idp-review-profile-form" class="${properties.kcFormClass!}" class="kc-form-wrapper-idp" action="${url.loginAction}" method="post">
+                <form id="kc-idp-review-profile-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
                     <div class="kc-idp-profile-info">
                         <p class="kc-idp-profile-message">
                             ${msg("confirmEmailAddressVerification", (user.email!''))}
@@ -13,7 +13,7 @@
                     </div>
 
                     <#if (user.firstName?has_content)>
-                        <div class="${properties.kcFormGroupClass!}">
+                        <div class="formulariosMargin">
                             <label for="firstName" class="${properties.kcLabelClass!}">
                                 ${msg("firstName")}
                             </label>
@@ -27,7 +27,7 @@
                     </#if>
 
                     <#if (user.lastName?has_content)>
-                        <div class="${properties.kcFormGroupClass!}">
+                        <div class="formulariosMargin">
                             <label for="lastName" class="${properties.kcLabelClass!}">
                                 ${msg("lastName")}
                             </label>
@@ -41,7 +41,7 @@
                     </#if>
 
                     <#if (user.email?has_content)>
-                        <div class="${properties.kcFormGroupClass!}">
+                        <div class="formulariosMargin">
                             <label for="email" class="${properties.kcLabelClass!}">
                                 ${msg("email")}
                             </label>
