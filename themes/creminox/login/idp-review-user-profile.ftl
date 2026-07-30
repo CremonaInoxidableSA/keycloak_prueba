@@ -8,7 +8,7 @@
                 <form id="kc-idp-review-profile-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
                     <div class="kc-idp-profile-info">
                         <p class="kc-idp-profile-message">
-                            ${msg("AAAAAAAAAAAAAAAAAAAAAA", (user.email!''))}
+                            ${msg("confirmEmailAddressVerification", (user.email!''))}
                         </p>
                     </div>
 

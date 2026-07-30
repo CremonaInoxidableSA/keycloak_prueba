@@ -107,6 +107,7 @@ header.pf-v5-c-form__header {
    ===================================================== */
 
 .pf-v5-c-form__group {
+    gap: 10px !important;
     margin-bottom: 18px !important;
     display: flex !important;
     flex-direction: column !important;
