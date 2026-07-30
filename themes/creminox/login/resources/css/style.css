@@ -532,6 +532,15 @@ footer p {
     margin-bottom: 12px !important;
 }
 
+.kc-form-buttons-group2,
+#kc-form-buttons2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-bottom: 0px !important;
+}
+
 .kc-form-buttons-group button,
 #kc-form-buttons button,
 #kc-form-buttons input[type="submit"] {

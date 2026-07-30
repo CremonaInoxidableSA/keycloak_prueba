@@ -17,8 +17,8 @@
                             </span>
                         </#if>
                     </div>
-                    <div class="${properties.kcFormGroupClass!}">
-                        <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+                    <div class="kc-form-buttons-group2">
+                        <div id="kc-form-buttons2" class="${properties.kcFormButtonsClass!}">
                             <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Submit">${msg("doSubmit")}</button>
                         </div>
                     </div>
