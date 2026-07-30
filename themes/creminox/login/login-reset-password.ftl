@@ -6,7 +6,7 @@
         <div id="kc-form">
             <div id="kc-form-wrapper">
                 <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-                    <div class="${properties.kcFormGroupClass!}">
+                    <div class="formulariosMargin">
                         <label for="username" class="${properties.kcLabelClass!}">
                             ${msg("usernameOrEmail")}
                         </label>
